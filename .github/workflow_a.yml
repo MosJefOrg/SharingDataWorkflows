@@ -1,0 +1,26 @@
+name: Workflow A
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "thisisatestbranch" ]
+jobs:
+  some_job:  
+    runs-on: mtest
+    steps:
+      - name: Some Step 
+        run: echo "Hello!"
+
+  job_producing_data:  
+    runs-on: mtest
+    steps:
+      - name: Some Step 
+        run: |
+            printf '{ 
+              "prop_1": "Some value",  
+              "prop_2": true
+            }' >> context.json
+      - uses: actions/upload-artifact@v3
+        with:
+          name: context.json
+          path: ./
