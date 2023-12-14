@@ -6,7 +6,7 @@ on:
     branches: [ "thisisatestbranch" ]
 jobs:
   some_job:  
-    runs-on: mtest
+    runs-on: ubuntu-latest
     steps:
       - name: Some Step 
         run: echo "Hello!"
