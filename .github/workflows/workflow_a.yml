@@ -12,7 +12,7 @@ jobs:
         run: echo "Hello!"
 
   job_producing_data:  
-    runs-on: mtest
+    runs-on: ubuntu-latest
     steps:
       - name: Some Step 
         run: |
